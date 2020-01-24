@@ -6,9 +6,8 @@ def get_townhall_email(townhall_url)
 
 townhall_page = Nokogiri::HTML(open(townhall_url)) 
 
-get_the_email = townhall_page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]')
-list_url_array = []
-list_url.each {|i| list_url_array << i.text}
+get_the_email = townhall_page.xpath('/html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').text
+
 return get_the_email
 
 end
